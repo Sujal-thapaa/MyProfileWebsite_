@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujal Thapa | Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover {
+            color: #ff9800;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #1c1c1c;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 24px;
+        }
+        nav ul {
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            font-size: 18px;
+        }
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        aside {
+            flex: 1 1 30%;
+            padding: 20px;
+            background: #1c1c1c;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        aside img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .social-icons a {
+            margin: 5px;
+            font-size: 20px;
+            color: white;
+            display: inline-block;
+        }
+        .social-icons a:hover {
+            color: #ff9800;
+        }
+
+        .right-section {
+            flex: 1 1 65%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+    display: none; /* Initially hide all sections */
+    padding: 100px 20px 20px; /* Add space for header overlap */
+}
+
+section.active {
+    display: block; /* Show active section */
+}
+
+html {
+    scroll-padding-top: 100px; /* Adjust for header height */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+        section h2 {
+            margin-bottom: 10px;
+            color: #1c1c1c;
+            border-bottom: 2px solid #ff9800;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            aside, .right-section {
+                flex: 1 1 100%;
+            }
+        }
+
+
+        .resume-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resume-header h1 {
+    font-size: 32px;
+    color: #6A1B9A;
+    margin-bottom: 5px;
+}
+
+.resume-header p {
+    font-size: 14px;
+    color: #333;
+}
+
+.resume-header a {
+    color: #6A1B9A;
+    text-decoration: none;
+}
+
+.resume-header a:hover {
+    text-decoration: underline;
+}
+
+.resume-content h3 {
+    font-size: 20px;
+    color: #6A1B9A;
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.resume-content ul {
+    margin-left: 20px;
+}
+
+.resume-content ul li {
+    margin-bottom: 10px;
+}
+
+.work-experience h4 {
+    font-size: 16px;
+    margin-top: 15px;
+    color: #333;
+}
+
+.work-experience p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+.contact-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.contact-page h2 {
+    font-size: 28px;
+    color: #6A1B9A;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-info,
+.contact-form-container {
+    flex: 1 1 45%;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3,
+.contact-form-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #6A1B9A;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.contact-info ul li a {
+    color: #6A1B9A;
+    text-decoration: none;
+}
+
+.contact-info ul li a:hover {
+    text-decoration: underline;
+}
+
+.contact-form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-form-container button {
+    background: #6A1B9A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form-container button:hover {
+    background: #53197a;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-info,
+    .contact-form-container {
+        flex: 1 1 100%;
+    }
+}
+
+
+.portfolio-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.portfolio-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.portfolio-page h2 {
+    font-size: 28px;
+    color: #6A1B9A;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #6A1B9A;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-card .project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #6A1B9A;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.project-card .project-link:hover {
+    background: #53197a;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 90%;
+    }
+}
+
+/* Left Section Styles */
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    min-height: 100vh; /* Ensure the main content fills the viewport height */
+}
+
+/* Left Section (Sidebar) */
+.left-section {
+    flex: 0 0 250px; /* Fixed width for the sidebar */
+    height: 100vh; /* Full height of the viewport */
+    position: sticky; /* Keeps it in place during scroll */
+    top: 0; /* Stick to the top of the viewport */
+    padding: 20px;
+    background: #1c1c1c;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Scrollable if content exceeds viewport */
+}
+.right-section {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Profile Image Styling */
+.profile-image-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border: 5px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-image-container:hover {
+    transform: scale(1.1);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Name and Role */
+.left-section h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #ff9800;
+    transition: color 0.3s ease;
+}
+
+.left-section h2:hover {
+    color: #ffa500;
+}
+
+.role {
+    font-size: 16px;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Contact Info */
+.contact-info {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #ff9800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ffa500;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #ff9800;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: #e68a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .left-section {
+        text-align: center;
+    }
+    .contact-info {
+        text-align: center;
+    }
+}
+
+/* Light Theme */
+body.light-theme {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header Light Theme */
+body.light-theme header {
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme header a {
+    color: #6A1B9A;
+}
+
+body.light-theme header a:hover {
+    color: #53197a;
+}
+
+/* Section Styling for Light Theme */
+body.light-theme section {
+    background: #fff;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme h2 {
+    color: #6A1B9A;
+}
+
+body.light-theme p,
+body.light-theme a {
+    color: #333;
+}
+
+body.light-theme a:hover {
+    color: #6A1B9A;
+}
+
+/* Button in Light Theme */
+body.light-theme .theme-toggle {
+    background: #6A1B9A;
+    color: white;
+}
+
+body.light-theme .theme-toggle:hover {
+    background: #53197a;
+}
+
+/* Left Section Light Theme */
+body.light-theme .left-section {
+    background: #fff;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .profile-image-container {
+    border-color: #333;
+}
+
+body.light-theme .social-icons a {
+    color: #6A1B9A;
+}
+
+body.light-theme .social-icons a:hover {
+    color: #53197a;
+}
+
+/* Portfolio Section Light Theme */
+body.light-theme .project-card {
+    background: #f9f9f9;
+    border-color: #ddd;
+}
+
+body.light-theme .project-card h3 {
+    color: #6A1B9A;
+}
+
+body.light-theme .project-card p {
+    color: #555;
+}
+
+/* Contact Section Light Theme */
+body.light-theme .contact-container {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .contact-info a {
+    color: #6A1B9A;
+}
+
+body.light-theme .contact-info a:hover {
+    color: #53197a;
+}
+
+/* Adjust Contact Info for Dark Theme */
+body:not(.light-theme) .contact-info p,
+body:not(.light-theme) .contact-info a {
+    color: #ccc; /* Light gray for better visibility */
+}
+
+/* Adjust Contact Info for Light Theme */
+body.light-theme .contact-info p,
+body.light-theme .contact-info a {
+    color: #000000; /* Dark text for better visibility in light mode */
+}
+
+.contact-info a {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #ffa500;
+    text-decoration: underline;
+}
+
+
+
+/* General Mobile Styles */
+@media (max-width: 768px) {
+    /* Header Styles */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav ul {
+    display: none; /* Hide menu */
+    flex-direction: column;
+    background: #1c1c1c;
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul.show {
+    display: flex; /* Show menu when active */
+}
+
+.hamburger {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    nav ul {
+        display: flex; /* Always show menu on larger screens */
+        flex-direction: row;
+        position: static; /* Remove absolute positioning */
+        width: auto;
+    }
+    .hamburger {
+        display: none; /* Hide hamburger on larger screens */
+    }
+}
+
+
+    /* Main Content */
+    .main-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    aside {
+        flex: 1 1 100%;
+    }
+
+   
+    /* Portfolio Section */
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        flex: 1 1 100%;
+    }
+
+    /* Left Section */
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .left-section h2 {
+        font-size: 20px;
+    }
+
+    .role {
+        font-size: 14px;
+    }
+
+    /* Button Sizes */
+    .theme-toggle {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
+/* Modal Container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* On top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Image */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s; /* Zoom animation */
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ff9800;
+}
+
+/* Zoom Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.nav-link.active {
+    color: #ff9800; /* Highlight active link */
+    border-bottom: 2px solid #ff9800; /* Optional underline */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Sujal Thapa</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link" onclick="showSection('about', this)">About</a></li>
+                <li><a href="#resume" class="nav-link" onclick="showSection('resume', this)">Resume</a></li>
+                <li><a href="#portfolio" class="nav-link" onclick="showSection('portfolio', this)">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link" onclick="showSection('contact', this)">Contact</a></li>
+            </ul>
+        </nav>
+        
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+
+    </header>
+
+
+    <!-- Modal for Enlarged Profile Picture -->
+<div id="profile-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image">
+</div>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Left Section -->
+        <aside class="left-section">
+            <div class="profile-card">
+                <!-- Profile Image -->
+                <div class="profile-image-container">
+                    <img src="Profile_Picuture.png" alt="Profile Picture of Sujal Thapa" class="profile-image">
+                </div>
+                
+                <!-- Name and Role -->
+                <h2>Sujal Thapa</h2>
+                <p class="role">Computer Science and Mathematics Student at ULM</p>
+                
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> <a href="tel:+17402490108">+1 740-249-0108</a></p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:sujal124suj@gmail.com">sujal124suj@gmail.com</a></p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <strong>Location:</strong> 
+                        <a href="https://maps.app.goo.gl/KcN84GNzMNyEbJxS9" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            Madison Hall, 3607 Evangeline Street, Monroe, LA
+                        </a>
+                    </p>
+                </div>
+                
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="https://github.com/Sujal-thapaa" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sujal-thapa-56a2292a4/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/sujal_thapaaa" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/sujal.thapa.1671897" target="_blank" aria-label="Facebook Profile"><i class="fab fa-facebook"></i></a>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle">Switch to Light Theme</button>
+
+            </div>
+        </aside>
+        
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <section id="about" class="active">
+                <h2>About Me</h2>
+                <p>I am a driven undergraduate student at the University of Louisiana at Monroe (ULM), pursuing a Bachelor of Science in Computer Science with a robust foundation in Mathematics. My academic journey reflects a passion for innovation, combining technical expertise with creative problem-solving to address real-world challenges.
+
+                    With a strong skill set in web development, IoT systems, and virtual mapping technologies, I have successfully led and contributed to impactful projects, such as a Dining Hall Waste Management System leveraging IoT for sustainability and a Virtual Campus Tour utilizing Google Maps API. My collaborative experiences and leadership abilities have been honed through teamwork and independent research, resulting in accolades like the Emerging Scholar Project Award.
+                    
+                    In addition to my technical skills, I am committed to lifelong learning, actively seeking opportunities to expand my knowledge in AI, edge computing, and software development. My goal is to leverage my education and skills to develop innovative solutions that contribute to both industry advancements and community welfare.</p>
+            </section>
+
+            <section id="resume" class="resume-page">
+                <h2>Resume</h2>
+                <div class="resume-header">
+                    <h1>SUJAL THAPA</h1>
+                    <p>Madison Hall, 3607 Evangeline Street, Monroe, LA, USA · 740-249-0108 · <a href="mailto:sujal124suj@gmail.com">sujal124suj@gmail.com</a></p>
+                    <p><a href="https://www.linkedin.com/in/sujal-thapa-56a2292a4/" target="_blank">linkedin</a></p>
+                </div>
+                <div class="resume-content">
+                    <h3>Summary</h3>
+                    <p>Motivated Computer Science Student with hands-on experience in web development. Skilled in problem-solving, team collaboration, and innovative project design. Seeking an internship to apply technical expertise and contribute to impactful technological solutions.</p>
+            
+                    <h3>Work Experience</h3>
+                    <div class="work-experience">
+                        <h4>Emerging Scholar, University of Louisiana at Monroe</h4>
+                        <p><strong>Aug 2024 – Nov 2024</strong></p>
+                        <ul>
+                            <li>Developed a Web-based Dining Hall Waste Management System, reducing food wastage through real-time tracking and awareness campaigns.</li>
+                            <li>Conducted a collaborative research project and published findings, earning a $400 stipend.</li>
+                            <li>Designed and implemented innovative solutions to optimize university dining hall operations, promoting sustainability and responsibility.</li>
+                        </ul>
+                        <h4>Virtual Tour Project Lead, University of Louisiana at Monroe</h4>
+                        <p><strong>Sep 2024 – Nov 2024</strong></p>
+                        <ul>
+                            <li>Leading the development of a virtual university tour website using Google Maps API and Google Street View.</li>
+                            <li>Integrated interactive features like building-specific information and multimedia elements to enhance user engagement.</li>
+                            <li>Collaborated with a diverse team to complete the project on schedule with advanced 3D mapping techniques.</li>
+                        </ul>
+                    </div>
+            
+                    <h3>Education</h3>
+                    <ul>
+                        <li>
+                            <strong>Bachelor of Science in Computer Science</strong>, University of Louisiana at Monroe (ULM)
+                            <ul>
+                                <li>Focus: IoT systems, web development, virtual mapping.</li>
+                                <li>Key Achievement: Emerging Scholar Project Award.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>High School Diploma</strong>, Gandaki Boarding School, Nepal (Graduated: 2023)
+                            <ul>
+                                <li>GPA: 3.5/4.0</li>
+                                <li>Leadership: Led a 7-member team in Physics and Chemistry projects.</li>
+                            </ul>
+                        </li>
+                    </ul>
+            
+                    <h3>Additional Information</h3>
+                    <ul>
+                        <li><strong>Technical Skills:</strong> Python, HTML, CSS, JavaScript, IoT Systems, Google Maps API</li>
+                        <li><strong>Languages:</strong> English, Nepali (Fluent); Hindi (Basic Proficiency)</li>
+                        <li><strong>Certifications:</strong> Emerging Scholar Award, Coursera Certification in Java</li>
+                        <li><strong>Awards/Activities:</strong> Gold Medalist - Gandaki Pi Contest, Bronze Medalist - Math Olympiad, IoT Project Stipend ($400)</li>
+                    </ul>
+                </div>
+            </section>
+            
+
+            <section id="portfolio" class="portfolio-page">
+                <h2>Portfolio</h2>
+                <div class="projects-container">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <img src="My_web_img/Dinning_website_SS.png" alt="IoT-Based Dining Hall Waste Management System" class="project-image">
+                        <h3>IoT-Based Dining Hall Waste Management System</h3>
+                        <p>A project to reduce food wastage using IoT systems with real-time tracking and awareness campaigns.</p>
+                        <a href="https://sujal-thapaa.github.io/Emerging-Scholar-Project/" target="_blank" class="project-link">View Project</a>
+                    </div>
+            
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <img src="My_web_img/Virtual_tour_web_image.png" alt="Virtual Tour Website" class="project-image">
+                        <h3>Virtual Tour Website</h3>
+                        <p>An interactive website for the University of Louisiana at Monroe using Google Maps API and Street View.</p>
+                        <a href="https://sujal-thapaa.github.io/Virtual_tour_website/" target="_blank" class="project-link">View Project</a>
+                    </div>
+            
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <img src="path/to/image3.jpg" alt="Other Project Name" class="project-image">
+                        <h3>Other Project Name</h3>
+                        <p>Brief description of the project and its key features.</p>
+                        <a href="https://your-project-url.com" target="_blank" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </section>
+            
+            
+
+            <section id="contact" class="contact-page">
+                <h2>Contact Me</h2>
+                <div class="contact-container">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <ul>
+                            <li><strong>Phone:</strong> <a href="tel:+17402490108">+1 740-249-0108</a></li>
+                            <li><strong>Email:</strong> <a href="mailto:sujal124suj@gmail.com">sujal124suj@gmail.com</a></li>
+                            <li><strong>Location:</strong> Madison Hall, 3607 Evangeline Street, Monroe, LA</li>
+                            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sujal-thapa-56a2292a4/" target="_blank">Sujal Thapa</a></li>
+                            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/sujal_thapaaa" target="_blank">sujal_thapaaa</a></li>
+                            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/sujal.thapa.1671897" target="_blank">Sujal Thapa</a></li>
+                        </ul>
+                    </div>
+            
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h3>Send Me a Message</h3>
+                        <form action="https://formspree.io/f/{your-form-id}" method="POST" class="contact-form">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+                            
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+
+    <!-- JavaScript to Handle Section Switching -->
+    <script>
+function showSection(sectionId, linkElement) {
+    // Hide all sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // Show the selected section
+    const activeSection = document.getElementById(sectionId);
+    activeSection.classList.add('active');
+
+    // Remove 'active' class from all nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Add 'active' class to the clicked link
+    linkElement.classList.add('active');
+}
+
+
+    </script>
+
+
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Event Listener for Theme Toggle
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        themeToggle.textContent = body.classList.contains('light-theme') 
+            ? 'Switch to Dark Theme' 
+            : 'Switch to Light Theme';
+    });
+
+
+    function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('show');
+}
+
+</script>
+
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('nav ul');
+        nav.classList.toggle('show');
+    }
+
+
+    // Get the modal elements
+const modal = document.getElementById('profile-modal');
+const modalImage = document.getElementById('modal-image');
+const profileImage = document.querySelector('.profile-image');
+const closeButton = document.querySelector('.close');
+
+// Show modal when profile picture is clicked
+profileImage.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImage.src = profileImage.src; // Set modal image source to profile picture source
+});
+
+// Close modal when close button is clicked
+closeButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Close modal when clicking outside the image
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+</script>
+
+
+</body>
+</html>
